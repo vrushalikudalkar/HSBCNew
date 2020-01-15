@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark teal ">
+        <a class="navbar-brand" style="font-weight: bold;" href="#">HSBC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item active">
+                    <a class="nav-link mr-sm-2" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-sm-2"  href="#">Create Test Cases</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-sm-2" href="#">Test Script</a>
+                </li>
+                <li class=" nav-item active dropdown" dropdown >
+                  <a class="nav-link dropdown-toggle"  dropdownToggle role="button"> 
+                      Method<span class="caret"></span></a>
+                  <div *dropdownMenu class="dropdown-menu dropdown-primary">
+                    <a class="dropdown-item" href="#">Get</a>
+                    <a class="dropdown-item" href="#">Put</a>
+                    <a class="dropdown-item" href="#">Post</a>
+                  </div>
+                </li>
+
+
+            </ul>
+            
+              
+              
+            
+            
+
+            
+            
+            <form class="form-inline">
+                
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+            <a id="navbar-static-login" alt="Sign Up" class="mr-sm-2 btn  btn-rounded btn-sm waves-effect waves-light auth-modal-toggle" data-auth-modal-tab="sign-up" style="background-color: rgb(207, 123, 123);">REGISTER</a>
+            <a id="navbar-static-login" alt="Sign Up" class="btn btn-rounded btn-sm waves-effect waves-light auth-modal-toggle" data-auth-modal-tab="sign-up">LOGIN</a>
+
+            
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+           
+              <li class="nav-item avatar">
+                <a class="nav-link p-0" href="#">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+                    alt="avatar image" height="35" (click)="show()">
+                </a>
+
+                <button type="button" (click)="show()" pButton icon="pi pi-info-circle" label="Profile"></button>
+                <p-dialog *ngIf="show" header="Title" >
+                  Content
+              </p-dialog>
+              
+
+              </li>
+            </ul>
+
+        </div>
+    </nav>
+    
+<!-- Sidebar -->
+<div class="w3-sidebar w3-rgb(212, 225, 230)  w3-bar-block" style="width:20%;background-color: rgb(212, 225, 230);" >
+    <h3 class="w3-bar-item" >SideBar</h3>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+
+    
+</div>
+    <h1>&nbsp</h1>
+    
+            <div class="col-md-6 offset-md-4 emp" >
+                <div class=" text-center" >
+                    <table  style="width: 100%;" class="emp">
+                        <tr  style="height: 50px; border-bottom: 2px solid rgb(118, 131, 141); font-size: 12px; ">
+                            <th>DEPARTMENT</th>
+                            <th>UNIT</th>
+                            <th>EMPLOYEE ID</th>
+                            <th>EMPLOYEE NAME</th>
+                            <th>EDIT INFO</th>
+                            <th>REMOVE ROW<th>
+                        </tr >
+                        <tr  style="height: 50px; border-bottom: 1px solid rgb(156, 176, 192); font-size: 12px;" *ngFor= "let i of empJson" [attr.EmpId]="i.EmpId">
+                            <td>{{i.Department}}</td>
+                            <td>{{i.Unit}}</td>
+                            <td>{{i.EmpId}}</td>
+                            <td>{{i.EmpName}}</td>
+                            <td ><button pButton type="button" label="EDIT" class="ui-button-rounded ui-button" style="background-color: rgb(76, 164, 175); border: none;"></button>
+                            </td>
+                            <td><button pButton type="button" label="REMOVE" class="ui-button-rounded ui-button" style="background-color: rgb(245, 70, 128); border: none;"></button></td>
+
+                        </tr>
+                    </table>                
+                </div>
+            </div>
+        
+
+   
+
+           
+    
+
+<!--Navbar-->
+
+        
+</body>
+</html>

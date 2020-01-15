@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark teal ">
+    <a class="navbar-brand" style="font-weight: bold;" [routerLink]="details">HSBC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item active">
+                <a class="nav-link mr-sm-2" (click)="w3_open()">Home <span class="sr-only">(current)</span></a>
+            </li>
+            </ul>
+
+    </div>
+</nav>
+
+<div *ngIf="close" class="w3-sidebar w3-rgb(212, 225, 230)  w3-bar-block" style="width:20%;background-color: rgb(212, 225, 230);" >
+
+  <button type="button" class="w3-bar-item " (click)="w3_close()" aria-label="Close" style="cursor:pointer">
+    <span aria-hidden="true">×</span>
+</button>
+  <a href="#" class="w3-bar-item w3-button">Home</a>
+  <a href="#" class="w3-bar-item w3-button">Accounts</a>
+  <a href="#" class="w3-bar-item w3-button">About Us</a>
+  <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+  <a href="#" class="w3-bar-item w3-button">Home</a>
+  <a href="#" class="w3-bar-item w3-button">Accounts</a>
+  <a href="#" class="w3-bar-item w3-button">About Us</a>
+  <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+  <a href="#" class="w3-bar-item w3-button">Home</a>
+  <a href="#" class="w3-bar-item w3-button">Accounts</a>
+  <a href="#" class="w3-bar-item w3-button">About Us</a>
+  <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+  <a href="#" class="w3-bar-item w3-button">Home</a>
+  <a href="#" class="w3-bar-item w3-button">Accounts</a>
+  <a href="#" class="w3-bar-item w3-button">About Us</a>
+  <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+  <a href="#" class="w3-bar-item w3-button">Home</a>
+  <a href="#" class="w3-bar-item w3-button">Accounts</a>
+  <a href="#" class="w3-bar-item w3-button">About Us</a>
+  <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+
+  
+</div>
+
+
+    <div *ngIf="!register"  class="wrapper fadeInDown">
+      <div id="formContent">
+        
+        <h2 class="active"> Sign Up </h2>
+        
+    
+      
+        <form>
+          <input type="text" id="login" class="fadeIn second" name="login" placeholder="Full Name">
+          <input type="text" id="password" class="fadeIn third" name="login" placeholder="User Id">
+          <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
+          <input type="text" id="password" class="fadeIn third" name="login" placeholder="Confirm Password">
+          <input type="submit" class="fadeIn fourth" value="Register" (click)="w3_registerOpen()" >
+        </form>
+    
+      
+          <div id="formFooter">
+            
+            <a class="underlineHover" (click)="w3_registerOpen()" >Already Registered?</a>
+          </div>
+      
+        </div>  
+      </div>
+
+
+      <div *ngIf="register" class="wrapper fadeInDown">
+
+        <div id="formContent">
+       
+          <h2 class="active"> Sign In </h2>
+          
+          <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In" routerLink="/details">
+          </form>
+          <div id="formFooter">
+            <a class="underlineHover" (click)="w3_passwordOpen()">Forgot Password?</a><br><br>
+           
+          </div>
+        </div>
+        </div>
+           
+</body>
+</html>

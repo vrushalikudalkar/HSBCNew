@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+   
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark teal ">
+        <a class="navbar-brand" style="font-weight: bold;" [routerLink]="details">HSBC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+             <ul class="navbar-nav mr-auto" >
+                <li class="nav-item active">
+                    <a class="nav-link mr-sm-2"  (click)="w3_homeOpen()" style="cursor:pointer">Home <span class="sr-only">(current)</span></a>
+                </li> 
+                  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto" > -->
+                <li class="nav-item active">
+                    <a class="nav-link mr-sm-2" style="cursor:pointer" (click)="w3_schemaOpen()">Schema details</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-sm-2" style="cursor:pointer">Test Case Generation</a>
+                </li>
+                <li class=" nav-item active dropdown" dropdown >
+                  <a class="nav-link dropdown-toggle"  dropdownToggle role="button" style="cursor:pointer"> 
+                      Input for REST<span class="caret"></span></a>
+                  <div *dropdownMenu class="dropdown-menu dropdown-primary">
+                    <a class="dropdown-item" style="cursor:pointer" >Get</a>
+                    <a class="dropdown-item" style="cursor:pointer" >Put</a>
+                    <a class="dropdown-item" style="cursor:pointer" >Post</a>
+                  </div>
+                </li>
+
+
+            </ul>
+        
+            <form class="form-inline">
+                
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+            <!-- <a id="navbar-static-login" alt="Sign Up" class="mr-sm-2 btn  btn-rounded btn-sm waves-effect waves-light auth-modal-toggle" data-auth-modal-tab="sign-up" style="background-color: rgb(207, 123, 123);">REGISTER</a>
+            <a id="navbar-static-login" alt="Sign Up" class="btn btn-rounded btn-sm waves-effect waves-light auth-modal-toggle" data-auth-modal-tab="sign-up">LOGIN</a> -->
+
+            
+            <ul class="navbar-nav ml-4 nav-flex-icons">
+           
+              <li class="nav-item avatar">
+                <a class="nav-link p-0" href="#">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+                    alt="avatar image" height="35" (click)="show()">
+                </a>
+
+                <!-- <button type="button" (click)="show()" pButton icon="pi pi-info-circle" label="Profile"></button> -->
+                
+              
+
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-8" >
+                    <li class="nav-item active">
+                    <a class="nav-link mr-sm-2" routerLink="/details/logout " style="cursor:pointer">Logout</a>
+                </li>
+            
+            </ul>
+        </div>
+    </nav>
+<!-- Sidebar -->
+<div *ngIf="home1" class="w3-sidebar w3-rgb(212, 225, 230)  w3-bar-block" style="width:20%;background-color: rgb(212, 225, 230);" >
+ 
+    <button type="button" class="w3-bar-item" (click)="w3_homeClose()" aria-label="Close" style="cursor:pointer">
+        <span aria-hidden="true">×</span>
+    </button>
+    
+    
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Accounts</a>
+    <a href="#" class="w3-bar-item w3-button">About Us</a>
+    <a href="#" class="w3-bar-item w3-button">Contact Us</a> 
+
+    
+</div> 
+  <div *ngIf="schema1" class="dialogue">
+             <div class=" col-md-8 offset-md-3 emp"  >
+                <div class=" text-center" >
+                    <table  style="width: 100% ;" class="emp">
+                        <tr>
+                            <td>
+                        <h3 class="first">Schema Level Details</h3></td>
+                        <td style="color:red;cursor:pointer" (click)="w3_schemaClose()" >X</td>
+                        </tr>
+                       
+                        <div class="ui-g ui-fluid" >
+                            <div class="ui-g-12 ui-md-4">
+                                <div class="ui-inputgroup">
+                                    <!-- <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span> -->
+                                    <input type="text" pInputText placeholder="API Name">         
+                                </div>
+                            </div>
+                            
+                            <div class="ui-g-12 ui-md-4">
+                                <div class="ui-inputgroup">
+                                    <!-- <span class="ui-inputgroup-addon">$</span> -->
+                                    <input type="text" pInputText placeholder="Jira ID">   
+                                    <!-- <span class="ui-inputgroup-addon">.00</span>       -->
+                                </div>
+                            </div>
+                                    
+                            <div class="ui-g-12 ui-md-4">
+                                <div class="ui-inputgroup">
+                                    <!-- <span class="ui-inputgroup-addon">www</span> -->
+                                    <input type="text" list="hosting-plan" pInputText placeholder="Version">  
+                                    <datalist id="hosting-plan">
+                                        <option value="1.0"></option>
+                                        <option value="0.8"></option>
+                                        <option value="0.9"></option>
+                                    </datalist>    
+                                </div>
+                            </div>
+
+                            <div class="ui-g-12 ui-md-4">
+                                <div class="ui-inputgroup">
+                                    <!-- <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span> -->
+                                    <input type="text" list="hosting" pInputText placeholder="Method"> 
+                                    <datalist id="hosting">
+                                        <option value="this"></option>
+                                        <option value="that"></option>
+                                        <option value="done"></option>
+                                    </datalist>          
+                                </div>
+                            </div>
+                            
+                            <div class="ui-g-12 ui-md-4">
+                                <div class="ui-inputgroup">
+                                    <!-- <span class="ui-inputgroup-addon">$</span> -->
+                                    <input type="text" pInputText placeholder="Assign">   
+                                    <!-- <span class="ui-inputgroup-addon">.00</span>       -->
+                                </div>
+                            </div>
+                                    
+                            <div class="ui-g-12 ui-md-4">
+                                <div class="ui-inputgroup">
+                                    <!-- <span class="ui-inputgroup-addon">www</span> -->
+                                    <input type="text" pInputText placeholder="Scrum">      
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <!-- <h3>Multiple Addons</h3>
+                        <div class="ui-g">
+                            <div class="ui-g-12">
+                                <div class="ui-inputgroup">
+                                    <span class="ui-inputgroup-addon"><i class="pi pi-tags" style="line-height: 1.25;"></i></span>  
+                                    <span class="ui-inputgroup-addon"><i class="pi pi-shopping-cart" style="line-height: 1.25;"></i></span>   
+                                    <input type="text" pInputText placeholder="Price"> 
+                                    <span class="ui-inputgroup-addon">$</span>  
+                                    <span class="ui-inputgroup-addon">.00</span>      
+                                </div>
+                            </div>
+                        </div>
+                         -->
+                    </table>                
+                </div>
+            <!-- </div> -->
+            <div class="Block">
+                <label id="lbl"></label>
+                <input type="file" (change)="fileChanged($event)">
+            </div>
+            <!-- <div class="upload-btn-wrapper" style="text-align: center;"> -->
+                <button class="btn" id="file" style="text-align: center;" (click)="uploadDocument()">Upload a file</button>
+                <!-- <input type="file" name="myfile"  /> -->
+              <!-- </div> -->
+
+        
+</div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <table border=1>
+                <tr>
+                    <th>Field Name</th>
+                    <th>Min Length</th>
+                    <th>Max Length</th>
+                    <th>D/T</th>
+                    <th>M/O</th>
+                    <th>Expected Values</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
+                </tr>
+                <tr >
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="btn-success">EDIT</button></td>
+                    <td><button class="btn-danger">REMOVE</button></td>
+                </tr >
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- will get title from below -->
+<!-- {{variable.specification.title |json}} -->
+
+<!-- will get status code from below -->
+<!-- {{statusCode}} -->
+
+<!-- {{variable.specification.resources |json}} -->
+{{dummyArray1 | json}}
+<!-- {{dummyArray2 | json}} -->
+<!-- {{dummyArray3 | json}} -->
+<!-- {{dummyArray4 | json}} -->
+<!-- {{dummyArray5 | json}} -->
+{{details | json}}
+
+
+
+
+
+
+
+<!--Navbar-->
+  
+</body>
+</html>
