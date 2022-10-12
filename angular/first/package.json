@@ -30,7 +30,7 @@
     "ngx-bootstrap": "^5.2.0",
     "primeicons": "^2.0.0",
     "primeng": "^9.0.0-rc.2",
-    "raml-1-parser": "^1.1.60",
+    "raml-1-parser": "^1.1.67",
     "raml-parser": "^0.8.18",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.4",
